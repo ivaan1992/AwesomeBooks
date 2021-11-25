@@ -1,32 +1,9 @@
 let library = localStorage.getItem('library') == null
   ? []
   : JSON.parse(localStorage.getItem('library'));
-paintBooks();
-
-const button = document.querySelector('#addBookButton');
-button.addEventListener('click', addBook);
-
-function Book(title, author) {
-  this.title = title;
-  this.author = author;
-}
 
 function saveLocalStorage() {
   localStorage.setItem('library', JSON.stringify(library));
-}
-
-function addBook(e) {
-  e.preventDefault();
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
-  const newBook = new Book(title, author);
-  add(newBook);
-}
-
-function add(newBook) {
-  library.push(newBook);
-  saveLocalStorage();
-  paintBooks();
 }
 
 function createTR(html) {
@@ -54,3 +31,25 @@ function paintBooks() {
     bookList.appendChild(newBookElement);
   });
 }
+
+function Book(title, author) {
+  this.title = title;
+  this.author = author;
+}
+
+function add(newBook) {
+  library.push(newBook);
+  saveLocalStorage();
+  paintBooks();
+}
+
+paintBooks();
+function addBook(e) {
+  e.preventDefault();
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const newBook = new Book(title, author);
+  add(newBook);
+}
+const button = document.querySelector('#addBookButton');
+button.addEventListener('click', addBook);
