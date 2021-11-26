@@ -15,11 +15,11 @@ function createTR(html) {
 function paintBooks() {
   const bookList = document.getElementById('book-list');
   bookList.innerHTML = '';
-  library.forEach((Book) => {
+  library.forEach((book) => {
     const newBookElement = createTR(`
       <tr>
-          <td>${Book.title}</td>
-          <td>${Book.author}</td>
+          <td>${book.title}</td>
+          <td>${book.author}</td>
           <td><button>Remove Book</button></td>
       </tr>
     `);
@@ -38,7 +38,7 @@ function Book(title, author) {
 }
 
 function add(newBook) {
-  library.push(newBook);
+  library = [...library,newBook];
   saveLocalStorage();
   paintBooks();
 }
