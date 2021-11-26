@@ -12,6 +12,11 @@ function createTR(html) {
   return div.querySelector('tr');
 }
 
+function Book(title, author) {
+  this.title = title;
+  this.author = author;
+}
+
 function paintBooks() {
   const bookList = document.getElementById('book-list');
   bookList.innerHTML = '';
@@ -32,13 +37,8 @@ function paintBooks() {
   });
 }
 
-function Book(title, author) {
-  this.title = title;
-  this.author = author;
-}
-
 function add(newBook) {
-  library = [...library,newBook];
+  library = [...library, newBook];
   saveLocalStorage();
   paintBooks();
 }
