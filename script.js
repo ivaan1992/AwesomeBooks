@@ -1,3 +1,10 @@
+class Book {
+  constructor(title, author) {
+  this.title = title;
+  this.author = author;
+  }
+}
+
 let library = localStorage.getItem('library') == null
   ? []
   : JSON.parse(localStorage.getItem('library'));
@@ -12,11 +19,6 @@ function createTR(html) {
   return div.querySelector('tr');
 }
 
-function Book(title, author) {
-  this.title = title;
-  this.author = author;
-}
-
 function paintBooks() {
   const bookList = document.getElementById('book-list');
   bookList.innerHTML = '';
@@ -28,6 +30,7 @@ function paintBooks() {
           <td><button>Remove Book</button></td>
       </tr>
     `);
+    
     newBookElement.querySelector('button').addEventListener('click', () => {
       newBookElement.remove();
       library = library.filter((bookArr) => Book !== bookArr);
@@ -51,5 +54,6 @@ function addBook(e) {
   const newBook = new Book(title, author);
   add(newBook);
 }
+
 const button = document.querySelector('#addBookButton');
 button.addEventListener('click', addBook);
