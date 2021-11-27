@@ -1,7 +1,6 @@
 import Book from './classes/Book.js';
 import Books from './classes/Books.js';
 
-
 const books = new Books();
 
 books.paintBooks();
@@ -44,11 +43,10 @@ document.querySelector('.menu').querySelectorAll('li').forEach((link) => {
   });
 });
 
-
 function updateClock() {
   const dt = new Date();
-  const DivDate =  document.querySelector('.date-time');
-  DivDate.innerHTML = dt.toLocaleString();  
+  const DivDate = document.querySelector('.date-time');
+  DivDate.innerHTML = dt.toLocaleString();
 }
 
 function initClock() {
@@ -57,4 +55,3 @@ function initClock() {
 }
 
 window.onload = initClock;
-
