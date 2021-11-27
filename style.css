@@ -169,3 +169,11 @@ nav img {
   color: #075cc2;
   font-weight: 800;
 }
+
+.date-time {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 150px;
+  color: #fff;
+  font-size: 22px;
+}
