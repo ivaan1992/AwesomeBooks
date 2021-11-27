@@ -4,7 +4,7 @@
 
 > Simple Javascript exercise about a basic Book Storage.
 
-![screenshot](./assets/screenshot-1.png)
+![screenshot](https://user-images.githubusercontent.com/73128809/143690310-691b7260-aab0-4166-b865-7c803468dd54.png)
 
 The purpose of this project is to practice basic Javascript skills using Objects and Classes to get a simple book list in LocalStorage.
 
@@ -12,6 +12,7 @@ The purpose of this project is to practice basic Javascript skills using Objects
 
 - Javascript
 - Html
+- Css
 
 ## Authors
 
