@@ -15,12 +15,12 @@ class Books {
   paintBooks() {
     const bookList = document.getElementById('book-list');
     bookList.innerHTML = '';
-    this.library.forEach((book,i) => {
+    this.library.forEach((book, i) => {
       const row = document.createElement('tr');
-      row.innerHTML=`
+      row.innerHTML = ` 
             <td>${book.title}</td>
             <td>${book.author}</td>
-            <td><button id= ${i} class='remove'>Remove Book</button></td>
+            <td><button id= ${i} class='remove' onclick = 'remBook()'>Remove Book</button></td>
       `;
       bookList.appendChild(row);
     });
@@ -29,7 +29,7 @@ class Books {
   saveLocal() { localStorage.setItem('library', JSON.stringify(this.library)); }
 
   addBook(book) {
-    const l = this.library
+    const l = this.library;
     if (JSON.stringify(l[l.length - 1]) !== JSON.stringify(book)
     && book.title !== '' && book.author !== '') {
       this.library = [...this.library, book];
@@ -38,7 +38,11 @@ class Books {
     this.paintBooks();
   }
 
-  // removeBook(id);
+  removeBook(id) {
+    this.library.splice(id, 1);
+    this.saveLocal();
+    this.paintBooks();
+  }
 }
 
 const books = new Books();
@@ -47,3 +51,5 @@ document.querySelector('#addBookButton').addEventListener('click', () => {
   const newBook = new Book();
   books.addBook(newBook);
 });
+/* eslint-disable no-unused-vars */
+function remBook() { books.removeBook(window.event.target.id); }
