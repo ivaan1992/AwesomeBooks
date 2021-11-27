@@ -12,7 +12,6 @@ export default class Books {
     bookList.innerHTML = '';
     this.library.forEach((book) => {
       const row = createElement(`
-
           <table>
               <tr>
                 <th class="info-table">Title</th>
