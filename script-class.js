@@ -37,8 +37,8 @@ function displayPage(link) {
 }
 displayPage('table-books');
 
-document.querySelector(".menu").querySelectorAll("li").forEach(link => {
-  link.addEventListener("click", (e) => {
-    displayPage(e.target.id)
-  })
-})
+document.querySelector('.menu').querySelectorAll('li').forEach(link => {
+  link.addEventListener('click', (e) => {
+    displayPage(e.target.id);
+  });
+});
