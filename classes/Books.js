@@ -12,11 +12,25 @@ export default class Books {
     bookList.innerHTML = '';
     this.library.forEach((book) => {
       const row = createElement(`
+          <table>
+              <tr>
+                <th class="info-table">Title</th>
+                <th class="info-table atr">Author</th>
+                <th class="deleteBook"></th>
+              </tr>
+              <tr class="table-body">
+                <td class="t">${book.title}</td>
+                <td class="a">${book.author}</td> 
+                <td class="b"><button class='remove'>Remove Book</button></td>
+              </tr>
+          </table>    
+
           <tr>
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td><button class='remove'>Remove Book</button></td>
           </tr>
+
           `);
       row.querySelector('.remove').addEventListener('click', () => {
         this.removeBook(book);
