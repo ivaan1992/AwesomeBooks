@@ -7,9 +7,9 @@ function saveLocalStorage() {
 }
 
 function createTR(html) {
-  const div = document.createElement('table');
-  div.innerHTML = html;
-  return div.querySelector('tr');
+  const tr = document.createElement('table');
+  tr.innerHTML = html;
+  return tr.querySelector('tr');
 }
 
 function Book(title, author) {
@@ -22,11 +22,9 @@ function paintBooks() {
   bookList.innerHTML = '';
   library.forEach((book) => {
     const newBookElement = createTR(`
-      <tr>
           <td>${book.title}</td>
           <td>${book.author}</td>
           <td><button>Remove Book</button></td>
-      </tr>
     `);
     newBookElement.querySelector('button').addEventListener('click', () => {
       newBookElement.remove();
