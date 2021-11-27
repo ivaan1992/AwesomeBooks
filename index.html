@@ -8,20 +8,20 @@
     <title>Awesome Books</title>
 </head>
 <body>
-    <div class="content">
-       <header>
-           <nav>
-               <img src="Images/libro-nav" alt="logo">
-               <ul class="menu">
-                   <li><a href="#">Books</a></li>
-                   <li><a href="#">Form</a></li>
-                   <li><a href="#">Contact</a></li>
-               </ul>
+    <header>
+        <nav>
+            <img src="Images/libro-nav" alt="logo">
+            <ul class="menu">
+                <li id="table-books">Books</li>
+                <li id="add-books">Form</li>
+                <li id="contact-section">Contact</li>
+            </ul>
 
-           </nav>
-       </header>
-        <h1>Awesome Books</h1>
-        <div class="table">
+        </nav>
+    </header>
+    <div class="content">
+        <section class="table" id="table-list">
+            <h1>All Awesome Books</h1>
             <table >
                 <tr>
                     <th></th>
@@ -32,15 +32,24 @@
                     <td></td>
                 </tr>
             </table>
-        
-        </div>
-        <div class="book-form">
+        </section>
+        <section class="book-form" id="addBookForm">
+            <h2>Add More Books</h2>
             <form id="library">
                 <input type="text" id="title" placeholder="Title" required><br>
                 <input type="text" id="author" placeholder="Author" required><br>
                 <button type="button" id="addBookButton">Add Book</button>
-            </form>
-        </div>
+            </form>   
+        </section>
+        <section id="Contact-info">
+            <h2>Contact Information</h2>
+            <p>Do you have any questions or you just want to say "Hello"?<br>You can reach out to us!</p>
+            <ul>
+                <li>Our email: mail@mail.com</li>
+                <li>Our phone number: 0045625656565456</li>
+                <li>Our address: Streetname 22, 84503 City, Country</li>
+            </ul>
+        </section>
     </div>
     <script type="module" src="script-class.js"></script>
 </body>
