@@ -1,7 +1,7 @@
-const { DateTime } = window.luxon;
-
 import Book from './classes/Book.js';
 import Books from './classes/Books.js';
+
+const { DateTime } = window.luxon;
 
 const books = new Books();
 
@@ -53,23 +53,3 @@ function updateDate() {
 setInterval(() => {
   updateDate();
 }, 1000);
-
-
-
-
-
-
-
-
-/* function updateClock() {
-  const dt = new Date();
-  const DivDate = document.querySelector('.date-time');
-  DivDate.innerHTML = dt.toLocaleString();
-}
-
-function initClock() {
-  updateClock();
-  window.setInterval(updateClock, 1);
-}
-
-window.onload = initClock; */
