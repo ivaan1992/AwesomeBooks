@@ -43,7 +43,21 @@ document.querySelector('.menu').querySelectorAll('li').forEach((link) => {
   });
 });
 
-function updateClock() {
+const dt = DateTime.now(dt);
+dt = DateTime.fromObject({
+  day: 27,
+  hour: 18
+}, {
+  zone: 'Mexico',
+  numberingSystem : 'beng'
+})
+
+DateTime.fromISO("2021-11-27")
+DateTime.now().toString();
+
+
+
+/*function updateClock() {
   const dt = new Date();
   const DivDate = document.querySelector('.date-time');
   DivDate.innerHTML = dt.toLocaleString();
@@ -54,4 +68,4 @@ function initClock() {
   window.setInterval(updateClock, 1);
 }
 
-window.onload = initClock;
+window.onload = initClock;*/
