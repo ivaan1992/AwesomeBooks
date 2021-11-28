@@ -1,3 +1,5 @@
+const { DateTime } = window.luxon;
+
 import Book from './classes/Book.js';
 import Books from './classes/Books.js';
 
@@ -43,21 +45,23 @@ document.querySelector('.menu').querySelectorAll('li').forEach((link) => {
   });
 });
 
-const dt = DateTime.now(dt);
-dt = DateTime.fromObject({
-  day: 27,
-  hour: 18
-}, {
-  zone: 'Mexico',
-  numberingSystem : 'beng'
-})
+function updateDate() {
+  const date = document.querySelector('#date');
+  date.innerHTML = DateTime.now().toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+}
 
-DateTime.fromISO("2021-11-27")
-DateTime.now().toString();
+setInterval(() => {
+  updateDate();
+}, 1000);
 
 
 
-/*function updateClock() {
+
+
+
+
+
+/* function updateClock() {
   const dt = new Date();
   const DivDate = document.querySelector('.date-time');
   DivDate.innerHTML = dt.toLocaleString();
@@ -68,4 +72,4 @@ function initClock() {
   window.setInterval(updateClock, 1);
 }
 
-window.onload = initClock;*/
+window.onload = initClock; */
