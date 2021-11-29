@@ -19,8 +19,8 @@ export default class Books {
                 <th class="deleteBook"></th>
               </tr>
               <tr class="table-body">
-                <td class="t">${book.title}</td>
-                <td class="a">${book.author}</td> 
+                <td class="books-authors">${book.title}</td>
+                <td class="books-authors">${book.author}</td> 
                 <td class="b"><button class='remove'>Remove Book</button></td>
               </tr>
           </table>    
